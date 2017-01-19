@@ -31,6 +31,20 @@ devuelven enteros.
 El nombre de la carta se devuelve en minusculas. El constructor asume 
 que los valores de los par�metros son legales.
 
+----------------------------------------------------
+
 Os dejo la clase TestCarta que testea la clase Carta: 
 https://gist.github.com/miguelbayon/7e33f5919d092424a22d46939c9a4ffd. 
 Comprobad que vuestra clase pasa los tests.
+
+---------------------------------------------------
+
+Crear una clase llamaza Mazo. El constructor de la clase Mazo 
+debe encargrse de crear las 40 cartas de la baraja española y de 
+dejarlas guardadas de alguna forma.
+
+Crear un método verCartasDelMazo que muestra linea a linea todas los nombres 
+de las cartas existentes en el mazo.
+
+---------------------------------------------------
+

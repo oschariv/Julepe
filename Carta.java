@@ -21,8 +21,8 @@ public class Carta
      */
     public Carta(int numeracion, int palo)
     {
-        if ((numeracion >=1 && numeracion <=7)|| (numeracion >= 10 && numeracion <= 12))
-        {
+        if ((numeracion >=1 && numeracion <=7) || (numeracion >= 10 && 
+            numeracion <= 12)){
             if (palo >=0 && palo <= 3){
                 this.numeracion = numeracion;
                 this.palo = palo;
