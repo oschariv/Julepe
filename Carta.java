@@ -41,36 +41,38 @@ public class Carta
         String paloADevolver = "";
         String numeracionADevolver = "";
         // comprobamos de que palo es.
-        if (palo == 0) {
-            paloADevolver = "oros";
+        switch(palo){
+            case 0:
+                paloADevolver = " de oros";
+                break;
+            case 1:
+                paloADevolver = " de copas";
+                break;
+            case 2:
+                paloADevolver = " de espadas";
+                break;
+            case 3:
+                paloADevolver = " de bastos";
         }
-        else if(palo == 1){
-            paloADevolver = "copas";
-        }
-        else if(palo == 2){
-            paloADevolver = "espadas";
-        }
-        else if(palo == 3){
-            paloADevolver = "bastos";
-        }
-        
+                
         // Comprobamos si tiene nombre especial.
-        if (numeracion == 1) {
-            numeracionADevolver = "as";
+        switch(numeracion){
+            case 1:
+                numeracionADevolver = "as";
+                break;
+            case 10:
+                numeracionADevolver = "sota";
+                break;
+            case 11:
+                numeracionADevolver = "caballo";
+                break;
+            case 12:
+                numeracionADevolver = "rey";
+                break;
+            default:
+                numeracionADevolver += numeracion;
         }
-        else if(numeracion == 10){
-            numeracionADevolver = "sota";
-        }
-        else if(numeracion == 11){
-            numeracionADevolver = "caballo";
-        }
-        else if(numeracion == 12){
-            numeracionADevolver = "rey";
-        }
-        else {
-            numeracionADevolver += numeracion;
-        }
-        cartaADevolver = numeracionADevolver + " de " + paloADevolver;
+        cartaADevolver = numeracionADevolver + paloADevolver;
         
         return cartaADevolver;
     }
