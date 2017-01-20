@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 /**
  * Write a description of class Mazo here.
  * 
@@ -9,11 +10,7 @@ public class Mazo
 {
     // ArrayList para guardar la coleccion de cartas
     private ArrayList<Carta> mazo;
-    // almacena el palo
-    private int palo;
-    //almacena la numeracion
-    private int numeracion;
-
+    
     /**
      * Constructor for objects of class Mazo
      * El constructor crea el mazo automaticamente (no se incluyen 8 ni 9).
@@ -30,10 +27,27 @@ public class Mazo
             }
         }
     }
-
+    
+    /**
+     * Permite ver todas las cartas del mazo ordenada.
+     * Invoca el metodo toString de la clase carta automaticamente.
+     */
     public void verCartasDelMazo(){
         for (int contador = 0; contador < mazo.size(); contador++){
             System.out.println(mazo.get(contador));
+        }
+    }
+    
+    /**
+     * Permite barajar el mazo aleatoriamente.
+     */
+    public void barajar(){
+        for (int posicionActual = 0; posicionActual < mazo.size(); posicionActual++) {
+            Carta carta1 = mazo.get(posicionActual);
+            Random aleatorio = new Random();
+            int posicionAleatoria = aleatorio.nextInt(mazo.size());
+            mazo.set(posicionActual, mazo.get(posicionAleatoria));
+            mazo.set(posicionAleatoria, carta1);
         }
     }
 }
