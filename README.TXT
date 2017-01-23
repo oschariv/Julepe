@@ -59,3 +59,6 @@ y consiga mezclar las cartas existentes en ese momento en el mazo.
 Implementar un metodo llamado sacarCarta en la clase Mazo que devuelva 
 un objeto Carta. Concretamente debe devolver la primera carta del mazo, 
 eliminando esta del mazo.
+
+-------------------------------------------------
+

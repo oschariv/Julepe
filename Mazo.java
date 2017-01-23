@@ -50,4 +50,16 @@ public class Mazo
             mazo.set(posicionAleatoria, carta1);
         }
     }
+    
+    /**
+     * Metodo que permite sacar una carta del mazo y ademas elimina esta
+     * automaticamente.
+     */
+    public Carta sacarCarta(){
+        Carta cartaSacada = null;
+        if (mazo.size() > 0){
+            cartaSacada = mazo.remove(0);
+        }
+        return cartaSacada;
+    }
 }
