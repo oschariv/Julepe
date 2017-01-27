@@ -35,7 +35,12 @@ public class Juego
         jugadorHumano = nombreJugadorHumano;
         Jugador nuevoJugador = new Jugador(jugadorHumano);
         nombreJugadores[0] = nuevoJugador;
-              
+        
+        // Muestra por pantalla un mensaje de bienvenida que muestra los nombres 
+        //de los jugadores incluyendo el humano.
+        System.out.println("Bienvenido a la partida " + jugadorHumano + ".");
+        System.out.println("Tus rivales de la partida son:");
+        
         //Agragamos todos los nombres preestablecidos al ArrayList.
         listaNombres();
         
@@ -45,16 +50,8 @@ public class Juego
             int valorAleatorio = aleatorio.nextInt(nombre.size());
             nuevoJugador = new Jugador(nombre.remove(i));
             nombreJugadores[i] = nuevoJugador;
-        }
-        
-        // Muestra por pantalla un mensaje de bienvenida que muestra los nombres 
-        //de los jugadores incluyendo el humano.
-        System.out.println("Bienvenido a la partida.");
-        System.out.println("Los jugadores de la partida son: .");
-        for (int i = 0; i < nombreJugadores.length; i++){
             System.out.println("- " + nombreJugadores[i].getNombre());
-        }
-        
+        }    
         //Barajamos la baraja para que no sean monotonas las partidas.
         mazoJuego.barajar();
         
