@@ -29,7 +29,7 @@ public class Jugador
      * Las cartas se reciben una a una.
      */
     public void recibirCarta(Carta carta){ 
-        while (contadorMano < mano.length) {
+        if (contadorMano < 5){
             mano[contadorMano] = carta;
             contadorMano++;
         }
@@ -40,7 +40,16 @@ public class Jugador
      */
     public void verCartasJugador(String nombre){
         for (int i= 0; i < mano.length; i++){
-            System.out.println(mano[i]);
+            if (mano[i] != null){
+                System.out.println(mano[i]);
+            }            
         }
+    }
+    
+    /**
+     * Metodo que devuelve el nombre del jugador.
+     */
+    public String getNombre(){
+        return nombre;
     }
 }
