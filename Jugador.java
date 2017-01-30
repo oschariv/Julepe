@@ -1,4 +1,4 @@
-
+import java.util.Random;
 /**
  * Write a description of class Jugador here.
  * 
@@ -51,5 +51,67 @@ public class Jugador
      */
     public String getNombre(){
         return nombre;
+    }
+    
+    /**
+     * Metodo que nos permite tirar una carta.
+     * El método muestra por pantalla el nombre del jugador que ha tirado la carta 
+     * y la carta tirada. Devuelve la carta tirada. En caso de que el jugador 
+     * no tenga cartas o de que el nombre especificado como parámetro no coincida 
+     * con ninguna carta, devuelve null.
+     */
+    public Carta tirarCarta(String cartaATirar){
+        Carta cartaTirada = null;
+        if (contadorMano > 0){
+            int cartaActual = 0;
+            boolean buscando = true;
+            while (cartaActual < mano.length && buscando) {
+                if (mano[cartaActual]!= null) {
+                
+                
+                    if (cartaATirar.equals(mano[cartaActual].toString())){
+                        buscando = false;
+                        cartaTirada = mano[cartaActual];
+                        mano[cartaActual] = null;
+                        contadorMano--;
+                        System.out.println("Eljugador " + nombre + 
+                                " ha tirado la carta " + cartaTirada.toString());
+                    }
+                }
+                cartaActual++;
+            }
+        }
+        
+        return cartaTirada;
+    }
+    
+    /**
+     * Metodo que permite tirar una carta aleatoria.
+     * El método muestra por pantalla el nombre del jugador que ha tirado la carta 
+     * y la carta tirada. Devuelve la carta tirada. En caso de que el jugador 
+     * no tenga cartas o de que el nombre especificado como parámetro no coincida 
+     * con ninguna carta, devuelve null.
+     */
+    public Carta tirarCartaAleatoria(){
+        Carta cartaTirada = null;
+        if (contadorMano > 0) {
+            Random aleatorio = new Random();
+            boolean elJugadorHaTiradoUnaCarta = false;
+            while(elJugadorHaTiradoUnaCarta){
+                int posicionAleatoria = aleatorio.nextInt(5);
+                if (mano[posicionAleatoria] != null) {
+                    cartaTirada = mano[posicionAleatoria];
+                    mano[posicionAleatoria] = null;
+                    contadorMano--;
+                    System.out.println("Eljugador " + nombre + 
+                                 " ha tirado la carta " + cartaTirada.toString());
+                    elJugadorHaTiradoUnaCarta = true;
+                }
+            }
+            
+        }
+        
+        
+        return cartaTirada;
     }
 }

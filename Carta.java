@@ -90,4 +90,10 @@ public class Carta
     public int getNumeracion(){
         return numeracion;
     }
+    /**
+     * 
+     */
+    public void ganaA() {
+        
+    }
 }

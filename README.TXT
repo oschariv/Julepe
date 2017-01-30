@@ -62,3 +62,94 @@ eliminando esta del mazo.
 
 -------------------------------------------------
 
+23-01-2017
+
+Crear un array de Strings en CodePad que sea capaz de albergar 4 String. 
+Darle valor a cada elemento del array. Hacer un bucle que muestre por 
+pantalla todos los elementos del array.
+
+Añadir la clase Jugador que permita a un jugador identificado por un 
+nombre (en formato String) ser capaz de tener hasta 5 cartas. El 
+constructor debe admitir el nombre del jugador como parámetro. Además 
+debe haber un método llamado recibirCarta que permita un parametro de 
+tipo Carta y un método llamado verCartasJugador que imprima por pantalla 
+las cartas del jugador, una por linea, y que funcione tenga las cartas 
+que tenga.
+
+Es obligatorio usar un array para guardar las cartas del jugador.
+
+-------------------------------------------------
+
+26-01-2017
+
+Añadir una clase Juego. En el constructor de Juego se crean tantos 
+jugadores como se especifiquen por parametro y un mazo. Sabemos que 
+nunca se van a especificar menos de 3 ni más de 5 jugadores. 
+
+Los nombres de los jugadores deben ser asignados de forma aleatoria 
+entre un conjunto de nombres (dos jugadores no pueden tener el mismo nombre).
+
+Implementar en esa clase un método llamado repartir que coja el mazo 
+y de 5 cartas a los jugadores creados. La entrega de cartas debe ser 
+al estilo del reparto que se hace en la realidad, es decir, primero 
+se baraja y luego se entrega una carta a cada jugador. La última 
+carta entregada indica el palo que pinta, que debe registrarse de
+alguna foma.
+
+Implementa en la clase Jugador un metodo llamado getNombre que devuelva 
+como String el nombre del jugador.
+
+Implementa un método llamado verCartasJugador que muestre por pantalla 
+las cartas de un jugador. Para saber qué jugador mostrar, indicamos como 
+parámetro del método el nombre del Jugador.
+
+En esta actividad no se puede tocar ninguna de las clases ya creadas 
+excepto añadir el método getNombre en la Jugador.
+
+-------------------------------------------------
+
+27-01-2017
+
+Vamos a pensar ahora que el primer jugador es siempre el humano 
+que interactua con nuestro programa y el resto, jugadores controlados 
+por el ordenador.
+
+Modificar la clase Juego para que:
+- El constructor admita como segundo parametro el nombre del jugador 
+humano. Además debe mostrar por pantalla un mensaje de bienvenida y 
+el nombre de cada uno de los jugadores de la partida (incluyendo el humano) .
+- El metodo repartir debe mostrar por pantalla el palo que pinta con 
+un mensaje del tipo "Pintan bastos" o "Pintan oros" y debe devolver 
+el número asociado con el palo que pinta. Además debe mostrar por 
+pantalla las cartas que recibe el jugador humano.
+- Añadir un método verCartasJugadorHumano que muestre las cartas del 
+jugador humano.
+- Modificar el nombre del metodo verCartasJugador para que pase a 
+llamarse hacerTrampasYVerCartasDeJugador.
+
+Ojo, el primer parámetro de constructor sigue siendo el numero de 
+jugadores totales!!
+
+Modificar la clase Jugador para que:
+- Exista un nuevo método que sea tirarCarta. Admite un parámetro 
+String que indica el nombre de la carta a tirar. El método muestra 
+por pantalla el nombre del jugador que ha tirado la carta y la carta 
+tirada. Devuelve la carta tirada. En caso de que el jugador no tenga 
+cartas o de que el nombre especificado como parámetro no coincida 
+con ninguna carta, devuelve null.
+- Exista un nuevo método que sea tirarCartaAleatoria. El método 
+muestra por pantalla el nombre del jugador que ha tirado la carta 
+y la carta tirada. Devuelve la carta tirada. En caso de que el jugador 
+no tenga cartas, devuelve null.
+
+-------------------------------------------------
+
+30-01-2017
+
+Modificar la clase Carta para que:
+- Exista un método llamado ganaA que reciba un parámetro de tipo Carta 
+y un parámetro de tipo entero que indica el palo que pinta. El método 
+devuelve true en caso de que la carta sea superior a la carta pasada 
+como parámetro conforme a las reglas del tute recogidas en la Wikipedia 
+y false en caso contrario. No hace falta comproar que el parámetro sea 
+null o no, se asume que no lo es.
