@@ -47,9 +47,9 @@ public class Baza
      */
     public int  getPaloPrimeraCartaDeLaBaza(){
         int paloPrimeraCarta = -1;
-        
-        paloPrimeraCarta = baza[0].getPalo();
-        
+        if (baza[0] != null){
+            paloPrimeraCarta = baza[0].getPalo();
+        }
         return paloPrimeraCarta;
     }
 }
