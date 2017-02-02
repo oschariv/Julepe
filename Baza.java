@@ -41,4 +41,15 @@ public class Baza
             contadorBaza++;
         }
     }
+    
+    /**
+     * 
+     */
+    public int  getPaloPrimeraCartaDeLaBaza(){
+        int paloPrimeraCarta = -1;
+        
+        paloPrimeraCarta = baza[0].getPalo();
+        
+        return paloPrimeraCarta;
+    }
 }
