@@ -90,10 +90,57 @@ public class Carta
     public int getNumeracion(){
         return numeracion;
     }
+    
+    /**
+     *  método llamado ganaA que reciba un parámetro de tipo Carta 
+     * y un parámetro de tipo entero que indica el palo que pinta. El método 
+     * devuelve true en caso de que la carta sea superior a la carta pasada 
+     * como parámetro conforme a las reglas del tute recogidas en la Wikipedia 
+     * y false en caso contrario. No hace falta comproar que el parámetro sea 
+     * null o no, se asume que no lo es.
+     */
+    public boolean ganaA(Carta cartaComparar, int paloQuePinta) {
+        boolean gana = false;
+        if (palo == cartaComparar.getPalo()){
+            // En caso de que tengan el mismo palo.
+            if (getPosicionEscalaTute() > cartaComparar.getPosicionEscalaTute()){
+                gana = true;
+            }
+        } else {
+            // En caso de que tengan distinto palo.
+            if (cartaComparar.getPalo() != paloQuePinta){
+                gana = true;
+            }
+        }
+        
+        
+        return gana;
+    }
+    
     /**
      * 
      */
-    public void ganaA() {
-        
+    public int getPosicionEscalaTute (){
+        int posicion = numeracion;
+            
+        if (numeracion == 3) {
+            posicion = 13;
+        }
+        else if (numeracion == 1) {
+            posicion = 14;
+        }
+    
+        return posicion;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
