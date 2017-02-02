@@ -11,6 +11,12 @@ public class Baza
     private int numeroJugadores;
     // Indica el palo que pinta.
     private int paloQuePinta;
+    // Array para guardar las cartas de la baza.
+    private Carta[] baza;
+    
+    private String[] jugadores;
+    
+    private int contadorBaza;
 
     /**
      * Constructor for objects of class Baza
@@ -19,14 +25,20 @@ public class Baza
     {
         this.numeroJugadores = numeroJugadores;
         this.paloQuePinta = paloQuePinta;
+        baza = new Carta[numeroJugadores];
+        jugadores = new String[numeroJugadores];
+        contadorBaza = 0;
     }
 
     /**
      * 
      */
-    public int sampleMethod()
+    public void addCarta(Carta cartaATirar, String nombreJugador)
     {
-        
-        return 1;
+        if (contadorBaza < numeroJugadores){
+            baza[contadorBaza] = cartaATirar;
+            jugadores[contadorBaza] = nombreJugador;
+            contadorBaza++;
+        }
     }
 }
