@@ -19,6 +19,8 @@ public class Baza
     private int contadorBaza;
 
     private Carta cartaGanadora;
+    
+    private String jugadorGanaBaza;
     /**
      * Constructor for objects of class Baza
      */
@@ -30,6 +32,7 @@ public class Baza
         jugadores = new String[numeroJugadores];
         contadorBaza = 0;
         cartaGanadora = null;
+        jugadorGanaBaza = null;
     }
 
     /**
@@ -41,17 +44,17 @@ public class Baza
             baza[contadorBaza] = cartaATirar;
             jugadores[contadorBaza] = nombreJugador;
 
-            Carta cartaComparar = null;
-            if (cartaGanadora == null ) {
-                cartaGanadora = baza[contadorBaza];
+            if(contadorBaza == 0){
+                cartaGanadora = cartaATirar;
+                jugadorGanaBaza = nombreJugador;
             }
             else{
-                cartaComparar = baza[contadorBaza];
-                if (cartaComparar.ganaA(cartaGanadora, paloQuePinta)){
-                    cartaGanadora = cartaComparar;
+                if (cartaATirar.ganaA(cartaGanadora, paloQuePinta)){
+                    cartaGanadora = cartaATirar;
+                    jugadorGanaBaza = nombreJugador;
                 }
             }
-
+            
             contadorBaza++;
         }
     }
@@ -72,6 +75,13 @@ public class Baza
      */
     public Carta cartaQueVaGanandoLaBaza(){
         return cartaGanadora;
+    }
+    
+    /**
+     * 
+     */
+    public String nombreJugadorQueVaGanandoLaBaza(){
+        return jugadorGanaBaza;
     }
 }
 
