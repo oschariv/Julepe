@@ -60,7 +60,7 @@ public class Baza
     }
 
     /**
-     * 
+     * Metodo para obtener el palo de la primera carta de la baza.
      */
     public int  getPaloPrimeraCartaDeLaBaza(){
         int paloPrimeraCarta = -1;
@@ -71,7 +71,7 @@ public class Baza
     }
 
     /**
-     * 
+     * Metodo para ver la carta que va ganando la baza.
      */
     public Carta cartaQueVaGanandoLaBaza(){
         return cartaGanadora;

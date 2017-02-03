@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.ArrayList;
 /**
  * Write a description of class Jugador here.
  * 
@@ -13,7 +14,9 @@ public class Jugador
     private Carta[] mano;
     // Contador para saber cuantas cartas a recibido.
     private int contadorMano;  
-
+    // ArrayLista para guardar las bazas ganadas.
+    private ArrayList<Baza> bazasGanadas;
+     
     /**
      * Constructor for objects of class Jugador
      */
@@ -113,5 +116,27 @@ public class Jugador
         
         
         return cartaTirada;
+    }
+    
+    /**
+     * 
+     */
+    public void addBaza(Baza bazaGanada){
+        bazasGanadas.add(bazaGanada);
+    }
+    
+    /**
+     * 
+     */
+    public int getNumeroBazasGanadas(){
+        return bazasGanadas.size();
+    }
+    
+    /**
+     * Metodo para tirar una carta Inteligentemente.
+     */
+    public Carta tiraCartaInteligentemente(int paloPrimeraCartaDeLaBaza, 
+             Carta cartaQueVaGAnando, int paloQuePinta){
+        return tirarCartaAleatoria();
     }
 }

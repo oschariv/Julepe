@@ -182,3 +182,24 @@ el momento actual.
 
 03-01-2017
 
+Modifica la clase Jugador para que:
+- Exista un método llamado tirarCartaInteligentemente. Debes pensar qué 
+parámetros son necesarios para que un jugador pueda decidir inteligentemente 
+que carta tirar. Sin embargo, aunque debes poner los parámetros correctos, 
+vamos a suponer, de momento, que el jugador tira la carta, al fin y al cabo, 
+de forma aleatoria.
+
+Los parametros del metodo tirarCartaInteligentemente son: 
+- Palo de la primera carta.
+- El valor y palo de la carta que va ganando.
+- Palo que pinta.
+
+Modifica la clase Jugador para que:
+- Exista un método llamado addBaza que se invocará cuando el jugador gana 
+una baza y se la lleva. El método admite un parámetro de tipo Baza (la baza 
+que ha ganado el jugador) que se asume nunca va a ser null. El método no 
+devuelve nada. 
+- Exista un método llamado getNumeroBazasGanadas. El método no tiene 
+parámetros y devuelve el número de bazas que el jugador lleva ganadas en 
+el momento actual.
+
